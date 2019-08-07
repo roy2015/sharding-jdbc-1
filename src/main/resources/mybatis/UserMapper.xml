@@ -12,7 +12,7 @@
     </resultMap>
 
     <sql id="Base_Column_List" >
-        id, userName, passWord, user_sex, nick_name
+        id, order_id, user_id, userName, passWord, nick_name
     </sql>
 
     <insert id="insert" parameterType="com.example.shardingjdbc.entity.User" >
@@ -22,5 +22,12 @@
         VALUES
         (#{order_id},#{user_id},#{userName}, #{passWord})
     </insert>
+
+    <select id = "loadOrder" resultMap="BaseResultMap" >
+        SELECT id, order_id, user_id, userName, passWord, nick_name
+        FROM
+        t_order
+        WHERE user_id = #{userId}
+    </select>
 
 </mapper>

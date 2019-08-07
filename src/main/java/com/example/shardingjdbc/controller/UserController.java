@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @Auther: Tinko
  * @Date: 2018/12/19 16:36
@@ -38,5 +40,15 @@ public class UserController {
         user2.setUserName(userName);
         userService.insert(user2);
         return "success";
+    }
+
+    @RequestMapping(value="load")
+    public String updateTransactional(@RequestParam(value = "userId") Long userId) {
+        List<User> users = userService.load(userId);
+        if (users != null && !users.isEmpty()) {
+            User user = users.get(0);
+            return user.toString();
+        }
+        return "";
     }
 }

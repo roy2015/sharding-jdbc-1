@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Auther: Tinko
@@ -22,4 +23,9 @@ public class UserService {
     public void insert(User user) {
         userMapper.insert(user);
     }
+
+    public List<User> load(Long id) {
+        return userMapper.loadOrder(id);
+    }
+
 }

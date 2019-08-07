@@ -13,6 +13,11 @@ File Encoding         : 65001
 Date: 2018-12-20 09:10:49
 */
 
+CREATE DATABASE IF NOT EXISTS `test_msg1`;
+USE `test_msg1`;
+
+SET NAMES utf8;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

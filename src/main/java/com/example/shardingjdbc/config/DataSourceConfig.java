@@ -92,7 +92,7 @@ public class DataSourceConfig {
                 .tableRules(Arrays.asList(orderTableRule))
                 .bindingTableRules(bindingTableRules)
                 .databaseShardingStrategy(new DatabaseShardingStrategy("user_id", new ModuloDatabaseShardingAlgorithm()))
-                .tableShardingStrategy(new TableShardingStrategy("order_id", new ModuloTableShardingAlgorithm()))
+//                .tableShardingStrategy(new TableShardingStrategy("order_id", new ModuloTableShardingAlgorithm()))
                 .build();
     }
 
